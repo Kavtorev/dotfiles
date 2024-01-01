@@ -1,14 +1,20 @@
+# Turn off the beep/bell sound in zsh
+unsetopt BEEP
+
 # History settings
 export HISTFILE=~/.zsh_history
 
 HISTSIZE=5000
 HISTFILESIZE=10000
 
-# Handling duplicate commands
-setopt HIST_IGNORE_ALL_DUPS
-
+# share history across multiple zsh sessions
+setopt SHARE_HISTORY
+# append to history
+setopt APPEND_HISTORY
 # adds commands as they are typed, not at shell exit
 setopt INC_APPEND_HISTORY
+# do not store duplications
+setopt HIST_IGNORE_DUPS
 
 # --------- History settings
 
@@ -21,8 +27,7 @@ fi
 source ~/.zplug/init.zsh
 
 # Declare plugins
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, at:v4.6.0
 zplug "zsh-users/zsh-autosuggestions"
 zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -38,6 +43,27 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+
+SPACESHIP_GIT_EMAIL_COLOR="${SPACESHIP_GIT_EMAIL_COLOR="white"}"
+
+spaceship_git_email() {
+  spaceship::is_git || return
+
+  local email
+
+  email="$(git config user.email)"
+
+  if [[ -n $email ]]; then
+    spaceship::section::v4 \
+      --color "$SPACESHIP_GIT_EMAIL_COLOR" \
+      "$email"
+  fi
+}
+
+SPACESHIP_RPROMPT_ORDER=(
+    git_email
+)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
