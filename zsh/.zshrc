@@ -1,3 +1,6 @@
+# enables the completion menu (allows TAB and arrow keys navigation between suggested commands)
+zstyle ':completion:*' menu select
+
 # Turn off the beep/bell sound in zsh
 unsetopt BEEP
 
@@ -28,10 +31,14 @@ source ~/.zplug/init.zsh
 
 # Declare plugins
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, at:v4.6.0
+
 zplug "zsh-users/zsh-autosuggestions"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 zplug "plugins/git", from:oh-my-zsh
 
 zplug "plugins/autojump", from:oh-my-zsh
+# makes autojump functional
 [ -f /usr/share/autojump/autojump.zsh ] && . /usr/share/autojump/autojump.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
