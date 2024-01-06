@@ -30,6 +30,10 @@ source ~/.zplug/init.zsh
 zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, at:v4.6.0
 zplug "zsh-users/zsh-autosuggestions"
 zplug "plugins/git", from:oh-my-zsh
+
+zplug "plugins/autojump", from:oh-my-zsh
+[ -f /usr/share/autojump/autojump.zsh ] && . /usr/share/autojump/autojump.zsh
+
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "lukechilds/zsh-nvm"
 
