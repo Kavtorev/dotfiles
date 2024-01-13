@@ -1,3 +1,7 @@
+# AUTOCOMPLETION
+# initialize autocompletion
+autoload -U compinit && compinit
+    
 # enables the completion menu (allows TAB and arrow keys navigation between suggested commands)
 zstyle ':completion:*' menu select
 
@@ -9,6 +13,7 @@ export HISTFILE=~/.zsh_history
 
 HISTSIZE=5000
 HISTFILESIZE=10000
+SAVEHIST=5000
 
 # share history across multiple zsh sessions
 setopt SHARE_HISTORY
@@ -79,3 +84,9 @@ SPACESHIP_RPROMPT_ORDER=(
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+function code() {
+    (flatpak run com.visualstudio.code $*)
+}
+
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
