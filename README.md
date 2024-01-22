@@ -19,3 +19,8 @@
   ```
   npm install --global yarn
   ```
+- [ ] install "make" utitlity
+  ```
+  sudo apt update
+  sudo apt install make
+  ```
