@@ -1,0 +1,21 @@
+[user]
+  name = Kavtorev
+  email = 57346893+Kavtorev@users.noreply.github.com
+[push]
+    # Always assume remote branch matches local branch name
+    default = current
+    # When pushing include tags
+    followTags = true
+[pull]
+    rebase = false
+[core]
+    # Do not track file permissions
+    filemode = false
+    excludesfile = .gitignore_global
+    # Tell Git to use VSCode to open files
+    editor = "code --wait"
+[diff]
+    # Use VSCode as default diff tool
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE

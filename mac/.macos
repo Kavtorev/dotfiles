@@ -1,0 +1,27 @@
+# echo "mkdir -p ${HOME}/code"
+# mkdir -p ${HOME}/code
+
+# echo "setting up homebrew..."
+# # install homebrew https://brew.sh
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# echo "brew installing stuff..."
+# brew tap homebrew/cask-fonts
+# brew install git autojump
+# brew install --cask font-jetbrains-mono font-fira-code docker slack visual-studio-code google-chrome \
+# firefox brave-browser telegram alfred
+
+# echo "generating ssh..."
+# ssh-keygen -t ed25519  -C "me+github@Kavtorev.com" -f ~/.ssh/github_mac
+# eval "$(ssh-agent -s)"
+# ssh-add --apple-use-keychain ~/.ssh/github_mac
+# echo "Host *\n AddKeysToAgent yes\n UseKeychain yes\n IdentityFile ~/.ssh/github_mac" | tee ~/.ssh/config
+# echo "run 'pbcopy < ~/.ssh/github_mac.pub' and paste that into GitHub"
+
+# echo "cloning dotfiles...
+# git clone git@github.com:Kavtorev/dotfiles.git "${HOME}/dotfiles"
+ln -s "${HOME}/dotfiles/mac/.zshrc" "${HOME}/.zshrc"
+ln -s "${HOME}/dotfiles/mac/.gitignore_global" "${HOME}/.gitignore_global"
+ln -s "${HOME}/dotfiles/mac/.gitconfig" "${HOME}/.gitconfig"
