@@ -1,1 +1,0 @@
-ln -s -f ~/dotfiles/git/.gitconfig ~/.gitconfig

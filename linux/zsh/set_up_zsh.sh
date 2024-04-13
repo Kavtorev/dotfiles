@@ -6,4 +6,4 @@ sudo echo "Current shell: $SHELL" && \
 
 sudo apt update && \
 sudo apt install autojump -y && \
-ln -s -f ~/dotfiles/zsh/.zshrc ~/.zshrc
+ln -s -f ~/dotfiles/linux/zsh/.zshrc ~/.zshrc
