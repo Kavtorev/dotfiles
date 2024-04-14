@@ -35,7 +35,7 @@ fi
 source ~/.zplug/init.zsh
 
 # Declare plugins
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme, at:v4.6.0
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github
 
 zplug "zsh-users/zsh-autosuggestions"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -83,3 +83,5 @@ export NVM_DIR="$HOME/.nvm"
 
 # makes autojump utility to work
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
