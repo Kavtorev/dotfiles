@@ -11,7 +11,7 @@ echo "brew installing stuff..."
 brew tap homebrew/cask-fonts
 brew install git autojump yarn
 brew install --cask font-jetbrains-mono font-fira-code docker slack visual-studio-code google-chrome \
-firefox brave-browser telegram alfred karabiner-elements
+firefox brave-browser telegram alfred
 
 echo "generating ssh..."
 ssh-keygen -t ed25519  -C "me+github@Kavtorev.com" -f ~/.ssh/github_mac
