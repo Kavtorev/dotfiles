@@ -10,7 +10,7 @@
     rebase = false
 [core]
     # Do not track file permissions
-    filemode = false
+	fileMode = false
     excludesfile = .gitignore_global
     # Tell Git to use VSCode to open files
     editor = "code --wait"
