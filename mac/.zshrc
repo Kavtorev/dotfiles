@@ -85,3 +85,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
 
 alias code="\"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code\""
+alias cursor="\"/Applications/Cursor.app/Contents/MacOS/Cursor\""
